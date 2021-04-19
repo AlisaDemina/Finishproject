@@ -1,8 +1,7 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 
-export class Menu extends React.Component{
-    render() {
+export function Menu() {
         return (
             <div className="container">
                         <nav className="navbar navbar-expand-lg custom_nav-container ">
@@ -50,5 +49,4 @@ export class Menu extends React.Component{
                         </nav>
             </div>
         )
-    }
 }
