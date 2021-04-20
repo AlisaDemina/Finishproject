@@ -37,10 +37,13 @@ export function Menu() {
                                         </li>
 
                                         <li className="nav-item">
-                                            <NavLink className="nav-link" to="/contact">Контакты</NavLink>
+                                            <NavLink className="nav-link" to="/contact">Обратная связь</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <NavLink className="nav-link" to="/cabinet">Личный кабинет</NavLink>
+                                            <NavLink className="nav-link" to="/authorization">Вход</NavLink>
+                                        </li>
+                                        <li className="nav-item">
+                                            <NavLink className="nav-link" to="/registration">Регистрация</NavLink>
                                         </li>
 
                                     </ul>

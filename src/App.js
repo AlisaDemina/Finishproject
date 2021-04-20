@@ -3,11 +3,12 @@ import {Main} from "./components/Main";
 import {AboutSchool} from "./components/AboutSchool";
 import {Study} from "./components/Study";
 import {Test} from "./components/Test";
-import {Cabinet} from "./components/Cabinet";
+import {Authorization} from "./components/Authorization";
 import {ContactUs} from "./components/ContactUs";
 import {Footer} from "./components/Footer";
 import {Menu} from "./components/Menu";
 import {Route, BrowserRouter} from "react-router-dom";
+import {Registration} from "./components/Registration";
 
 
 
@@ -21,7 +22,8 @@ function App() {
             <Route path="/admission" render={()=><Study/>}/>
             <Route path="/why" render={()=><Test/>}/>
             <Route path="/contact" render={()=><ContactUs/>}/>
-            <Route path="/cabinet" render={()=><Cabinet/>}/>
+            <Route path="/authorization" render={()=><Authorization/>}/>
+             <Route path="/registration" render={()=><Registration/>}/>
             <Footer/>
          </BrowserRouter>
     </div>
