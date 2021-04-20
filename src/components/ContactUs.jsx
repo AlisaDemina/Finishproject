@@ -9,6 +9,7 @@ export class ContactUs extends React.Component{
             name:"",
             email:"",
             message:"",
+            info:""
         }
     }
     sendForm(event) {
@@ -21,13 +22,24 @@ export class ContactUs extends React.Component{
             method: "POST",
             body: formData
         }).then(response=>response.json())
-            .then(result=>{
+            .then(result=> {
                 console.log(result)
+                if(result.result === "success"){
+                    this.setState({
+                        info: "Ваше сообщение отправлено"
+                    })
+                }else{
+                    this.setState({
+                        info: ""
+                    })
+                }
             })
     }
+
     handleInputChange(event){
         const value = event.target.value;
         const name = event.target.name;
+
         this.setState({
             [name]:value
         })
@@ -41,9 +53,9 @@ export class ContactUs extends React.Component{
                     <div className="row">
                         <div className="col-md-6">
                             <div className="d-flex justify-content-center d-md-block">
-                                <h2>
+                                <h3 style={{color:"white"}}>
                                     Контакты
-                                </h2>
+                                </h3>
                             </div>
                             <form onSubmit={this.sendForm}>
                                 <div className="contact_form-container">
@@ -56,12 +68,14 @@ export class ContactUs extends React.Component{
                                         </div>
                                         <div className="mt-3">
                                             <textarea value={this.state.message} onChange={this.handleInputChange} name="message" type="text" className="form-control" placeholder="Сообщение"/>
+                                            <p style={{color:"white"}}>{this.state.info}</p>
                                         </div>
 
                                         <div className="mt-5">
                                             <button type="submit">
                                                 Отправить
                                             </button>
+
                                         </div>
                                     </div>
                                 </div>

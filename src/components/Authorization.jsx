@@ -54,7 +54,7 @@ export class Authorization extends React.Component{
                     <div className="container">
                         <div className="col-sm-5 mx-auto">
                             <form onSubmit={this.handleSubmit}>
-                                <h3> Авторизация </h3>
+                                <h3 style={{color:"white"}}> Авторизация </h3>
                                 <div className="mb-3">
                                     <input value={this.state.email} onChange={this.handleInput} name="email" type="text" className="form-control" placeholder="login"/>
                                 </div>

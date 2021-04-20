@@ -1,4 +1,5 @@
 import React from "react";
+import {Redirect} from "react-router-dom";
 
 export class Registration extends React.Component{
 
@@ -10,7 +11,8 @@ export class Registration extends React.Component{
             name:"",
             email:"",
             pass:"",
-            info: ""
+            info: "",
+            redirect: false
         }
     }
     sendForm(event) {
@@ -25,6 +27,11 @@ export class Registration extends React.Component{
         }).then(response=>response.json())
             .then(result=>{
                 console.log(result)
+                if(result.result === "success"){
+                    this.setState({
+                        redirect: true
+                    })
+                }
             })
     }
     handleInputChange(event){
@@ -47,7 +54,7 @@ export class Registration extends React.Component{
                           info: ""
                       })
                   }
-                });
+                })
         }
         this.setState({
             [name]:value
@@ -55,54 +62,63 @@ export class Registration extends React.Component{
     }
 
     render() {
-        return (
+        const redirect = this.state.redirect;
+        if (redirect) {
+            return <Redirect to="/authorization"/>;
+        } else {
+            return (
 
-            <section className="cabinet_section">
-                <div id="container_demo">
+                <section className="cabinet_section">
+                    <div id="container_demo">
 
-                    <div id="wrapper">
-                        <div id="subscribe" className="animate form">
-                            <div className="col-sm-5 mx-auto">
-                                <form onSubmit={this.sendForm}>
-                                    <h3> Регистрация </h3>
+                        <div id="wrapper">
+                            <div id="subscribe" className="animate form">
+                                <div className="col-sm-5 mx-auto">
+                                    <form onSubmit={this.sendForm}>
+                                        <h3 style={{color: "white"}}> Регистрация </h3>
 
-                                    <div className="mb-3">
-                                        <input value={this.state.name} onChange={this.handleInputChange} name="name" type="text" className="form-control"
-                                               placeholder="login"/>
-                                    </div>
+                                        <div className="mb-3">
+                                            <input value={this.state.name} onChange={this.handleInputChange} name="name"
+                                                   type="text" className="form-control"
+                                                   placeholder="login"/>
+                                        </div>
 
-                                    <div className="mb-3">
-                                        <input value={this.state.email} onChange={this.handleInputChange} name="email" type="text" className="form-control"
-                                               placeholder="email"/>
-                                               <p style={{color:"black"}}>{this.state.info}</p>
-
-                                    </div>
-
-                                    <div className="mb-3">
-                                        <input value={this.state.pass} onChange={this.handleInputChange} name="pass" type="password" className="form-control"
-                                               placeholder="pass"/>
-                                    </div>
-
-                                    <div className="mb-3 text-center">
-                                        <input type="submit" value="Отправить" className="btn btn-primary"/>
-                                    </div>
+                                        <div className="mb-3">
+                                            <input value={this.state.email} onChange={this.handleInputChange}
+                                                   name="email" type="text" className="form-control"
+                                                   placeholder="email"/>
+                                            <p style={{color: "white"}}>{this.state.info}</p>
 
 
-                                    <p className="change_link">
-                                        <h4>Уже зарегистрированны ?</h4>
-                                        <a href="/authorization" className="to_subscribe"> Пройдите авторизацию </a>
-                                    </p>
-                                </form>
+                                        </div>
+
+                                        <div className="mb-3">
+                                            <input value={this.state.pass} onChange={this.handleInputChange} name="pass"
+                                                   type="password" className="form-control"
+                                                   placeholder="pass"/>
+                                        </div>
+
+                                        <div className="mb-3 text-center">
+                                            <input type="submit" value="Отправить" className="btn btn-primary"/>
+                                        </div>
+
+
+                                        <p className="change_link">
+                                            <h4 style={{color: "white"}}>Уже зарегистрированны ?</h4>
+                                            <a href="/authorization" className="to_subscribe"> Пройдите авторизацию </a>
+                                        </p>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-md-6">
-                            <div className="determine_img-container">
-                                <img src="images/determine.png" alt=""/>
+                            <div className="col-md-6">
+                                <div className="determine_img-container">
+                                    <img src="images/determine.png" alt=""/>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        )
+                </section>
+            )
+        }
     }
 }
