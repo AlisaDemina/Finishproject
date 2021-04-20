@@ -18,11 +18,13 @@ export class Main extends React.Component{
                             <br/>
                                 и пополнить ваш словарный запас
                             </p>
+
                             <div className="hero_btn-continer">
-                                <a href="" className="call_to-btn btn_white-border">
+                                <a href="/about" className="call_to-btn btn_white-border">
                                     Больше информации
                                 </a>
                             </div>
+
                         </div>
                         <div className="hero_img-container">
                             <div>

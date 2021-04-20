@@ -21,11 +21,6 @@ export class Test extends React.Component{
                                     и четыре варианта его перевода, один из которых является верным.
                                     Ответ на тест вы получите после выбора варианта и нажатии кнопки "Отправить".
                                 </p>
-                                <div className="">
-                                    <a href="" className="call_to-btn btn_white-border">
-                                        Больше информации
-                                    </a>
-                                </div>
                             </div>
                         </div>
                     </div>

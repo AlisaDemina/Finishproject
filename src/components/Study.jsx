@@ -18,11 +18,6 @@ export class Study extends React.Component{
                                     нажав кнопку "Слово выучено", вы можете исключить его из дальнейшего обучения,
                                     тем самым увеличив статистику изученных слов.
                                 </p>
-                                <div className="">
-                                    <a href="" className="call_to-btn btn_white-border">
-                                        Больше информации
-                                    </a>
-                                </div>
                             </div>
                         </div>
                         <div className="col-md-6">

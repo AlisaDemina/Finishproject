@@ -27,8 +27,8 @@ export class AboutSchool extends React.Component{
                                     как одну из составляющих успешного обучения иностранному языку.
                                 </p>
                                 <div className="">
-                                    <a href="" className="call_to-btn btn_white-border">
-                                        Больше информации
+                                    <a href="/admission" className="call_to-btn btn_white-border">
+                                        Перейти к обучению
                                     </a>
                                 </div>
                             </div>
@@ -56,8 +56,8 @@ export class AboutSchool extends React.Component{
                                         или услышать в самой обычной ситуации.
                                     </p>
                                     <div className="">
-                                        <a href="" className="call_to-btn btn_white-border">
-                                            Больше информации
+                                        <a href="/why" className="call_to-btn btn_white-border">
+                                            Перейти к обучению
                                         </a>
                                     </div>
                                 </div>
