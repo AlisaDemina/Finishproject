@@ -14,7 +14,7 @@ import {Registration} from "./components/Registration";
 
 function App() {
   return (
-    <div>
+      <div>
          <BrowserRouter>
             <Menu/>
             <Route exact path="/" render={()=><Main/>}/>
@@ -26,7 +26,7 @@ function App() {
              <Route path="/registration" render={()=><Registration/>}/>
             <Footer/>
          </BrowserRouter>
-    </div>
+      </div>
   );
 }
 
