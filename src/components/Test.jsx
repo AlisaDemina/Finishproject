@@ -1,12 +1,19 @@
 import React from "react";
-function Btnru(props){
-    return <div className="row align-items-stretch mb-5">
-                <div className="col-md-6">
-                    <button type="button" className="btn btn-primary btn-lg">{props.wordru}</button>
+function Btn(props){
+    return <div className="container">
+                <div className="row align-items-stretch mb-5">
+                    <div className="col-md-6">
+                        <button type="button" className="btn btn-primary btn-lg" className="form-control">{props.wordru}</button>
+                    </div>
                 </div>
-            </div>
-}
+                <div className="row align-items-stretch mb-5">
+                    <div className="col-md-6">
+                        <button type="button" className="btn btn-primary btn-lg" className="form-control">{props.wordru}</button>
+                    </div>
+                </div>
+    </div>
 
+}
 
 export class Test extends React.Component {
     constructor() {
@@ -22,7 +29,7 @@ export class Test extends React.Component {
                     console.log(result);
                     let rowsru = [];
                     for (let i=0; i< result.length; i++) {
-                        rowsru.push(<Btnru wordru={result[i].wordru} />)
+                        rowsru.push(<Btn wordru={result[i].wordru} worden={result[i].worden}/>)
                     }
                     this.setState({
                         words: rowsru

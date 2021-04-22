@@ -472,3 +472,11 @@ a:focus {
   border: 2px solid #696969;
   border-bottom: 2px solid #696969;
 }
+
+
+.table {
+  border: 3.5px solid rgb(46, 4, 10);
+  background: rgb(232, 246, 245);
+  box-shadow: 0 0 10px 5px rgb(222, 221, 239);
+  text-align: center;
+}

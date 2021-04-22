@@ -5,6 +5,7 @@ function Tr(props) {
                 <td>{props.class}</td>
                 <td>{props.wordru}</td>
                 <td>{props.worden}</td>
+                <td>{props.img}</td>
            </tr>
 }
 
@@ -24,7 +25,7 @@ export class Study extends React.Component{
                 console.log(result);
                 let rows = [];
                 for (let i=0; i< result.length; i++) {
-                    rows.push(<Tr index={i+1} class={result[i].class} wordru={result[i].wordru} worden={result[i].worden} img={result[i].img}/>)
+                    rows.push(<Tr index={i+1} class={result[i].class} wordru={result[i].wordru} worden={result[i].worden} worden={result[i].img} />)
                 }
                 this.setState({
                     word: rows
@@ -59,14 +60,15 @@ export class Study extends React.Component{
                         </div>
                     </div>
                     <hr/>
-                    <table className="table table-bordered border-primary">
+                    <table className="table">
 
-                        <thead>
+                        <thead className="table">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Категория</th>
                             <th scope="col">Слово из категории</th>
                             <th scope="col">Перевод</th>
+                            <th scope="col">Картинка</th>
                         </tr>
                         </thead>
                         <tbody>
