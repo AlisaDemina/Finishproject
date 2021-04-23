@@ -42,7 +42,7 @@ export class Authorization extends React.Component{
     render() {
         const redirect = this.state.redirect;
         if(redirect){
-            return <Redirect to="/registration"/>;
+            return <Redirect to="/"/>;
         }else {
 
             return (

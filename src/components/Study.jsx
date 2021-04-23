@@ -9,8 +9,6 @@ function Tr(props) {
            </tr>
 }
 
-
-
 export class Study extends React.Component{
     constructor() {
         super();

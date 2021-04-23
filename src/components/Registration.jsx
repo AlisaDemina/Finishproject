@@ -12,27 +12,31 @@ export class Registration extends React.Component{
             email:"",
             pass:"",
             info: "",
-            redirect: false
+            redirect: false,
+            submitBtn: "disabled"
         }
     }
     sendForm(event) {
         event.preventDefault();
-        const formData = new FormData();
-        formData.append("name", this.state.name);
-        formData.append("email", this.state.email);
-        formData.append("pass", this.state.pass);
-        fetch("http://u915186o.beget.tech/php/handlerReg.php", {
-            method: "POST",
-            body: formData
-        }).then(response=>response.json())
-            .then(result=>{
-                console.log(result)
-                if(result.result === "success"){
-                    this.setState({
-                        redirect: true
-                    })
-                }
-            })
+        if (this.state.info===""){
+            const formData = new FormData();
+            formData.append("name", this.state.name);
+            formData.append("email", this.state.email);
+            formData.append("pass", this.state.pass);
+            fetch("http://u915186o.beget.tech/php/handlerReg.php", {
+                method: "POST",
+                body: formData
+            }).then(response=>response.json())
+                .then(result=>{
+                    console.log(result)
+                    if(result.result === "success") {
+                        this.setState({
+                            redirect: true
+
+                        })
+                    }
+                })
+        }
     }
     handleInputChange(event){
         const value = event.target.value;
@@ -47,11 +51,13 @@ export class Registration extends React.Component{
                 .then(result=>{
                   if(result.result === "exist"){
                       this.setState({
-                          info: "Такой email уже есть!"
+                          info: "Такой email уже есть!",
+                          submitBtn: "disabled",
                       })
                   }else{
                       this.setState({
-                          info: ""
+                          info: "",
+                          submitBtn: "",
                       })
                   }
                 })
@@ -99,7 +105,7 @@ export class Registration extends React.Component{
                                         </div>
 
                                         <div className="mb-3 text-center">
-                                            <input type="submit" value="Отправить" className="btn btn-primary"/>
+                                            <input type="submit" disabled={this.state.submitBtn} value="Отправить" className="btn btn-primary"/>
                                         </div>
 
 
