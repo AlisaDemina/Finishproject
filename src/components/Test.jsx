@@ -4,7 +4,13 @@ function Btn(props){
                 <div className="row align-items-stretch mb-1">
                     <div className="col-md-6"></div>
                     <div className="col-md-6">
-                        <button type="button" className="btn btn-primary btn-lg rounded-circle" className="form-control">{props.worden}{props.wordru}</button>
+                        <button type="button" className="btn btn-primary btn-lg rounded-circle" className="form-control" onClick={()=> {
+                        const formData=new FormData();
+                        fetch('http://u915186o.beget.tech/php/getIndex.php', {
+
+                        })
+                        }
+                        }>{props.worden}{props.wordru}</button>
                     </div>
                 </div>
           </div>
