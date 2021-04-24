@@ -1,19 +1,39 @@
 import React from "react";
+import {Link} from "react-router-dom";
+
+
 function Tr(props) {
     return <tr>
-                <th scope="row">{props.index}</th>
-                <td>{props.class}</td>
-                <td>{props.wordru}</td>
-                <td>{props.worden}</td>
-                <td><img src={props.img}/></td>
-           </tr>
+        <th scope="row">{props.index}</th>
+
+        <td><Link to={"/category/"+props.id}>{props.class}</Link></td>
+        <td>{props.wordru}</td>
+        <td>{props.worden}</td>
+        <td><img src={props.img}/></td>
+        <td><span className='delete-word-btn' onClick={()=>{
+            const formData=new FormData();
+            formData.append('id', props.id);
+            fetch("http://u915186o.beget.tech/php/removeWord.php",{
+                method: "POST",
+                body: formData
+            }).then(response=>response.json())
+                .then(result=>{
+                    let words =props.parent.state.words;
+                    words.splice(props.index-1, 1);
+                    props.parent.setState({
+                        words: words
+                    })
+                })
+        }
+        }>[Удалить]</span></td>
+    </tr>
 }
 
 export class Study extends React.Component{
     constructor() {
         super();
         this.state = {
-            word: []
+            words: []
         }
     }
     componentDidMount() {
@@ -23,10 +43,20 @@ export class Study extends React.Component{
                 console.log(result);
                 let rows = [];
                 for (let i=0; i< result.length; i++) {
-                    rows.push(<Tr index={i+1} class={result[i].class} wordru={result[i].wordru} worden={result[i].worden} img={result[i].img} />)
+                    rows.push(<Tr
+                        key={i}
+                        index={i+1}
+                        id={result[i].id}
+                        class={result[i].class}
+                        wordru={result[i].wordru}
+                        worden={result[i].worden}
+                        img={result[i].img}
+                        parent={this}
+                    />)
+
                 }
                 this.setState({
-                    word: rows
+                    words: rows
                 })
 
             })
@@ -62,39 +92,30 @@ export class Study extends React.Component{
 
                         <thead className="table">
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">№</th>
+
                             <th scope="col">Категория</th>
                             <th scope="col">Слово из категории</th>
                             <th scope="col">Перевод</th>
                             <th scope="col">Картинка</th>
+                            <th scope="col">Управление</th>
                         </tr>
                         </thead>
                         <tbody>
-                            {this.state.word}
+                        {this.state.words}
                         </tbody>
                     </table>
 
-                    <div className="row">
-                        <div className="col-md-6">
-                            <div className="text-center">
-                                <div id="success"></div>
-                                <button className="btn btn-primary btn-xl text-uppercase" id="sendMessageButton"
-                                        type="submit">Слово выучено
-                                </button>
-                            </div>
-                        </div>
-                        <div className="col-md-6">
-                            <div className="text-center">
-                                <div id="success"></div>
-                                <button className="btn btn-primary btn-xl text-uppercase" id="sendMessageButton"
-                                        type="submit">Слово не выучено
-                                </button>
-                            </div>
-                        </div>
+
+                    <div className="hero_btn-continer text-center">
+                        <a href="/why" className="call_to-btn btn_white-border">
+                            Перейти к тестированию
+                        </a>
                     </div>
-                    <hr/>
                 </div>
+                <hr/>
+
             </section>
-       )
+        )
     }
 }

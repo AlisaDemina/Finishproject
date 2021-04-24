@@ -5,7 +5,7 @@ export function Menu() {
         return (
             <div className="container">
                         <nav className="navbar navbar-expand-lg custom_nav-container ">
-                            <a className="navbar-brand" href="index.html">
+                            <a className="navbar-brand" href="/">
                                 <span>
                                   Группа 021
                                 </span>
@@ -34,6 +34,10 @@ export function Menu() {
 
                                         <li className="nav-item">
                                             <NavLink className="nav-link" to="/why">Тестирование</NavLink>
+                                        </li>
+
+                                        <li className="nav-item">
+                                            <NavLink className="nav-link" to="/category">Категории</NavLink>
                                         </li>
 
                                         <li className="nav-item">

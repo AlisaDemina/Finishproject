@@ -72,9 +72,10 @@ export class ContactUs extends React.Component{
                                         </div>
 
                                         <div className="mt-5">
-                                            <button type="submit">
-                                                Отправить
-                                            </button>
+                                            <div className="hero_btn-container">
+                                                <input className="call_to-btn btn_white-border" type="submit" value="Отправить"/>
+                                            </div>
+
 
                                         </div>
                                     </div>

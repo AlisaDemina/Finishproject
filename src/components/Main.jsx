@@ -28,7 +28,7 @@ export class Main extends React.Component{
                         </div>
                         <div className="hero_img-container">
                             <div>
-                                <img src="images/hero.png" alt="" className="img-fluid"/>
+                                <img src="images/main.jpg" alt="" className="img-fluid"/>
                             </div>
                         </div>
                     </div>

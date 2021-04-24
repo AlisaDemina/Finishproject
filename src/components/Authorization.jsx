@@ -62,7 +62,7 @@ export class Authorization extends React.Component{
                                     <input value={this.state.pass} onChange={this.handleInput} name="pass" type="password" className="form-control" placeholder="pass"/>
                                 </div>
                                 <div className="mb-3 text-center">
-                                    <input type="submit" value="Войти" className="btn btn-primary"/>
+                                    <input type="submit" value="Войти" className="call_to-btn btn_white-border"/>
                                 </div>
                             </form>
                         </div>

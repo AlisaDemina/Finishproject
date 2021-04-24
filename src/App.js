@@ -9,6 +9,7 @@ import {Footer} from "./components/Footer";
 import {Menu} from "./components/Menu";
 import {Route, BrowserRouter} from "react-router-dom";
 import {Registration} from "./components/Registration";
+import {Category} from "./components/Category";
 
 
 
@@ -21,9 +22,10 @@ function App() {
             <Route path="/about" render={()=><AboutSchool/>}/>
             <Route path="/admission" render={()=><Study/>}/>
             <Route path="/why" render={()=><Test/>}/>
+            <Route path="/category" render={()=><Category/>}/>
             <Route path="/contact" render={()=><ContactUs/>}/>
             <Route path="/authorization" render={()=><Authorization/>}/>
-             <Route path="/registration" render={()=><Registration/>}/>
+            <Route path="/registration" render={()=><Registration/>}/>
             <Footer/>
          </BrowserRouter>
       </div>
