@@ -5,12 +5,16 @@ function Btn(props){
                     <div className="col-md-6"></div>
                     <div className="col-md-6">
                         <button type="button" className="btn btn-primary btn-lg rounded-circle" className="form-control" onClick={()=> {
-                        const formData=new FormData();
-                        fetch('http://u915186o.beget.tech/php/getIndex.php', {
-
-                        })
+                            const formData = new FormData();
+                            formData.append("id", props.id)
+                            fetch('http://u915186o.beget.tech/php/getIndex.php', {
+                                method: "POST",
+                                body: formData
+                            }).then(response => response.json())
+                                .then(result => console.log(result))
                         }
                         }>{props.worden}{props.wordru}</button>
+
                     </div>
                 </div>
           </div>
@@ -18,8 +22,8 @@ function Btn(props){
 }
 
 export class Test extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             words: []
         }
@@ -29,12 +33,12 @@ export class Test extends React.Component {
                 .then(response => response.json())
                 .then(result => {
                     console.log(result);
-                    let rowsru = [];
+                    let rows = [];
                     for (let i=0; i< result.length; i++) {
-                        rowsru.push(<Btn worden={result[i].worden} wordru={result[i].wordru} />)
+                        rows.push(<Btn id={result[i].id} worden={result[i].worden} wordru={result[i].wordru} />)
                     }
                     this.setState({
-                        words: rowsru
+                        words: rows
                     })
 
                 })
