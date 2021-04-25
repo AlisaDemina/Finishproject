@@ -1,10 +1,11 @@
 import React from "react";
-function Btn(props){
+function Btn(props) {
     return <div className="container">
-                <div className="row align-items-stretch mb-1">
-                    <div className="col-md-6"></div>
-                    <div className="col-md-6">
-                        <button type="button" className="btn btn-primary btn-lg rounded-circle" className="form-control" onClick={()=> {
+        <div className="row align-items-stretch mb-1">
+            <div className="col-md-6"></div>
+            <div className="col-md-6">
+                <button type="button" className="btn btn-primary btn-lg rounded-circle" className="form-control"
+                        onClick={() => {
                             const formData = new FormData();
                             formData.append("id", props.id)
                             fetch('http://u915186o.beget.tech/php/getIndex.php', {
@@ -14,10 +15,9 @@ function Btn(props){
                                 .then(result => console.log(result))
                         }
                         }>{props.worden}{props.wordru}</button>
-
-                    </div>
-                </div>
-          </div>
+            </div>
+        </div>
+    </div>
 
 }
 
@@ -40,7 +40,6 @@ export class Test extends React.Component {
                     this.setState({
                         words: rows
                     })
-
                 })
         }
 

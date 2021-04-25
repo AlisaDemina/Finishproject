@@ -7,44 +7,44 @@ export class Category extends React.Component{
                 <div className="container rounded mt-1">
                     <div className="row">
                         <div className="col-md-6">
-                            <div className="coffee-btn-group my-3">
-                                <div className="coffee-btn rounded-circle" onClick="getCoffee('Латте',42);"></div>
+                            <div className="text-btn-group my-3">
+                                <div className="text-btn rounded-circle" onClick="getCategory"></div>
                                 <span>Погода и времена года</span>
                             </div>
-                            <div className="coffee-btn-group my-3">
-                                <div className="coffee-btn rounded-circle" onClick="getCoffee('Американо',47);"></div>
+                            <div className="text-btn-group my-3">
+                                <div className="text-btn rounded-circle" onClick="getCategory"></div>
                                 <span>Семья. Друзья</span>
                             </div>
-                            <div className="coffee-btn-group my-3">
-                                <div className="coffee-btn rounded-circle" onClick="getCoffee('Эспрессо',61);"></div>
+                            <div className="text-btn-group my-3">
+                                <div className="text-btn rounded-circle" onClick="getCategory"></div>
                                 <span>Внешность</span>
                             </div>
-                            <div className="coffee-btn-group my-3">
-                                <div className="coffee-btn rounded-circle" onClick="getCoffee('Капучино',58);"></div>
+                            <div className="text-btn-group my-3">
+                                <div className="text-btn rounded-circle" onClick="getCategory"></div>
                                 <span>Хобби и свободное время</span>
                             </div>
-                            <div className="coffee-btn-group my-3">
-                                <div className="coffee-btn rounded-circle" onClick="getCoffee('Лунго',44);"></div>
+                            <div className="text-btn-group my-3">
+                                <div className="text-btn rounded-circle" onClick="getCategory"></div>
                                 <span>Спорт</span>
                             </div>
-                            <div className="coffee-btn-group my-3">
-                                <div className="coffee-btn rounded-circle" onClick="getCoffee('Лунго',44);"></div>
+                            <div className="text-btn-group my-3">
+                                <div className="text-btn rounded-circle" onClick="getCategory"></div>
                                 <span>Одежда</span>
                             </div>
-                            <div className="coffee-btn-group my-3">
-                                <div className="coffee-btn rounded-circle" onClick="getCoffee('Лунго',44);"></div>
+                            <div className="text-btn-group my-3">
+                                <div className="text-btn rounded-circle" onClick="getCategory"></div>
                                 <span>Еда</span>
                             </div>
-                            <div className="coffee-btn-group my-3">
-                                <div className="coffee-btn rounded-circle" onClick="getCoffee('Лунго',44);"></div>
+                            <div className="text-btn-group my-3">
+                                <div className="text-btn rounded-circle" onClick="getCategory"></div>
                                 <span>Природа</span>
                             </div>
-                            <div className="coffee-btn-group my-3">
-                                <div className="coffee-btn rounded-circle" onClick="getCoffee('Лунго',44);"></div>
+                            <div className="text-btn-group my-3">
+                                <div className="text-btn rounded-circle" onClick="getCategory"></div>
                                 <span>Профессии</span>
                             </div>
-                            <div className="coffee-btn-group my-3">
-                                <div className="coffee-btn rounded-circle" onClick="getCoffee('Лунго',44);"></div>
+                            <div className="text-btn-group my-3">
+                                <div className="text-btn rounded-circle" onClick="getCategory"></div>
                                 <span>Фрукты</span>
                             </div>
                         </div>
