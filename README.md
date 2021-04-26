@@ -1,70 +1,47 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+“Разработка web-приложения “Платформа для изучения иностранных языков” с использованием технологий HTML, CSS, JavaScript, JQuery”
+Цели
+Разработать web-приложение (SPA) для изучения иностранного языка. В качестве объекта изучаемого языка используем английский. 
+Задачи
+1.	Разработать сайт (SPA) с описанием методики обучения
+2.	Разработать модуль “Обучение”
+3.	Разработать модуль “Тестирование”
+4.	Разработать модуль “Обратной связи”
+5.	Разработать модуль “Регистрации и Авторизации”
+Технические подробности
+Используемые технологии
+1.	Гипертекстовый язык разметки HTML ;
+2.	Каскадные таблицы стилей CSS;
+3.	Фреймворк Bootstrap 4;
+4.	Язык программирования JavaScript;
+5.	Библиотека React JS;
+6.	Библиотека jQuery;
+7.	База данных MySQL;
+8.	Язык программирования PHP;
+Технические особенности
+1.	Разработка приложения выполнена с помощью библиотеки React JS и скомпилирован для работы на сервере. 
+2.	Используемый хостинг для разработки:  http://beget.tech
+3.	Сайт с web-приложением доступен по адресу: http://u915186o.beget.tech/
+4.	Исходный код проекта: https://github.com/AlisaDemina/Finishproject
+Интерфейс и дизайн
+Сайт с web-приложением был создан, как растягивающийся под любую
+ширину экрана. Интерфейс web-приложения имеет адаптивный дизайн для просмотра на мобильных устройства, планшетных компьютерах и перснональных компьютерах.
+Обзор web-приложения
+Все страницы сайта состоят из Menu, Body и Footer.
+Главная страница
+Содержит первичное описание сервиса и предложения получить “Больше информации”.
+Страница “Методика”
+Содержит краткое описание “Как это работает” и кнопки с предложением “Начать обучение”. Предусмотрен переход на страницы “Обучение” и “Тестирование.”
+Страница “Обучение”
+Содержит краткую информацию по описанию процесса обучения.
+Также, страница генерирует 10 случайных слов из таблицы базы данных (далее-БД) для обучения иностранным словам. Пользователю предоставлена возможность управления: изученные слова могут быть удалены из базы данных и со страницы сайта.
+Страница “Тестирование”
+Содержит систему тестирования. На страницу в кнопки выводятся 4 случайных русских слова из таблицы БД, а также английское слово, являющееся переводом одного из русских слов. По клику пользователя на русское слово становится возможным получить вывод перевода выбранного слова из таблицы БД в отдельную кнопку. 
+Страница “Категории”
+Предоставляет возможность выбрать категорию изучаемых слов. Переход на страницу “Категории” возможен также со страницы “Обучение” по клику на слово «категория» в табличной части страницы.
+Страница “Обратная связь”
+Содержит форму обратной связи для получения контактных данных и сообщения на стороне сервера. Данные отправляются в таблицу в БД.
+Страница “Вход”
+На данной странице реализована авторизация на сайте.  
+Страница “Регистрация”
+На данной странице реализована система регистрации на сайте. Данные передаются в таблицу в БД. Повторная регистрация с одинаковым email не возможна. В данном случае на экран выводится запись о том, что такой  email уже существует. После регистрации осуществляется редирект на страницу “Авторизация”.
+а данной странице реализована авторизация на сайте.  
