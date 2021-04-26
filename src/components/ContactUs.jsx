@@ -76,7 +76,6 @@ export class ContactUs extends React.Component{
                                                 <input className="call_to-btn btn_white-border" type="submit" value="Отправить"/>
                                             </div>
 
-
                                         </div>
                                     </div>
                                 </div>
@@ -93,4 +92,3 @@ export class ContactUs extends React.Component{
         )
     }
 }
-

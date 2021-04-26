@@ -20,7 +20,7 @@ export class Main extends React.Component{
                             </p>
 
                             <div className="hero_btn-continer">
-                                <a href="/about" className="call_to-btn btn_white-border">
+                                <a href="/about" className="call_to-btn btn_white-border-m">
                                     Больше информации
                                 </a>
                             </div>

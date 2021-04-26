@@ -84,6 +84,12 @@ export class Test extends React.Component {
                 <button type="button" className="btn btn-primary btn-lg rounded-circle" className="form-control">Перевод выбранного слова "{this.state.word}"</button>
                 </div>
                     <hr/>
+                <div className="hero_btn-continer text-center">
+                    <a href="/admission" className="call_to-btn btn_white-border">
+                        Перейти к обучению
+                    </a>
+                </div>
+                <hr/>
             </section>
         )
     }

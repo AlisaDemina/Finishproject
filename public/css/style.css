@@ -29,11 +29,18 @@ body {
   padding: 15px 45px;
   border-radius: 10px;
   font-size: 15px;
-  background-color: #ffffff;
+  background-color: #e0bb00;
   color: #262627;
   font-weight: 600;
   transition: all 0.3s ease 0s;
+  border: 1px solid #ced4da;
+  outline: none;
+  border-bottom: 1px solid #ced4da;
 }
+
+
+
+
 
 .hero_section .call_to-btn {}
 
@@ -281,7 +288,7 @@ a:focus {
 
 .determine_section a {
   background-color: #fdd31d;
-  color: #fefeff;
+  color: #000000;
 }
 /* end determine section */
 
@@ -296,9 +303,11 @@ a:focus {
 }
 
 .contact_section input {
-  border: 2px solid #696969;
+  background-color: #6bd1bd;
+  color: #fff;
+  border: 1px solid #ced4da;
   outline: none;
-  border-bottom: 2px solid #696969;
+  border-bottom: 1px solid #ced4da;
   width: 90%;
   margin: 15px 0;
 }
@@ -499,10 +508,11 @@ a:focus {
   background: #fdfdfe;
   height:40px;
   color: black;
-  font-family: 'Raleway', sans-serif;
+
+  font: 400 13.3333px Arial;
   font-size:20px;
   border-radius:30px 10px 10px 30px;
-  font-weight: 600;
+  font-weight: 400;
   border: 1px solid #c1bebe;
 }
 .text-btn-group>span{
