@@ -12,7 +12,9 @@ function Btn(props) {
                                 method: "POST",
                                 body: formData
                             }).then(response => response.json())
-                                .then(result => console.log(result))
+                                .then(result => {
+                                    props.showWord(result.worden);
+                                    console.log(result);})
                         }
                         }>{props.worden}{props.wordru}</button>
             </div>
@@ -25,52 +27,64 @@ export class Test extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            words: []
+            words: [],
+            word: ""
         }
+        this.showWord = this.showWord.bind(this);
     }
-        componentDidMount() {
-            fetch("http://u915186o.beget.tech/php/getWords.php")
-                .then(response => response.json())
-                .then(result => {
-                    console.log(result);
-                    let rows = [];
-                    for (let i=0; i< result.length; i++) {
-                        rows.push(<Btn id={result[i].id} worden={result[i].worden} wordru={result[i].wordru} />)
-                    }
-                    this.setState({
-                        words: rows
-                    })
+    componentDidMount() {
+        fetch("http://u915186o.beget.tech/php/getWords.php")
+            .then(response => response.json())
+            .then(result => {
+                console.log(result);
+                let rows = [];
+                for (let i=0; i< result.length; i++) {
+                    rows.push(<Btn key={i} showWord={this.showWord} id={result[i].id} worden={result[i].worden} wordru={result[i].wordru} />)
+                }
+                this.setState({
+                    words: rows
                 })
-        }
+            })
+    }
 
-        render(){
-            return (
-                <section className="why_section">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-6">
-                                <div className="why_img-container">
-                                    <img src="images/why.png" alt=""/>
-                                </div>
+    showWord(word){
+        this.setState({
+            word: word
+        });
+    }
+
+    render(){
+        return (
+            <section className="why_section">
+
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6">
+                            <div className="why_img-container">
+                                <img src="images/why.png" alt=""/>
                             </div>
-                            <div className="col-md-6">
-                                <div className="why_detail-box">
-                                    <h3>
-                                        Тестирование
-                                    </h3>
-                                    <p>
-                                        После начала тестирования вам будет предложено слово
-                                        и четыре варианта его перевода, один из которых является верным.
-                                        Ответ на тест вы получите после выбора варианта и нажатии кнопки "Отправить".
-                                    </p>
-                                </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="why_detail-box">
+                                <h3>
+                                    Тестирование
+                                </h3>
+                                <p>
+                                    После начала тестирования вам будет предложено слово
+                                    и четыре варианта его перевода, один из которых является верным.
+                                    Ответ на тест вы получите после выбора варианта и нажатии кнопки "Отправить".
+                                </p>
                             </div>
                         </div>
                     </div>
-                    {this.state.words}
+                </div>
+                {this.state.words}
+                <hr/>
+                <div className="container">
+                <button type="button" className="btn btn-primary btn-lg rounded-circle" className="form-control">Перевод выбранного слова "{this.state.word}"</button>
+                </div>
                     <hr/>
-                </section>
-            )
-        }
-
+            </section>
+        )
+    }
 }
